@@ -73,7 +73,7 @@ class Dog
     else
       dog = self.new_from_db(attributes)
     end
-
+    dog
   end
 
 
