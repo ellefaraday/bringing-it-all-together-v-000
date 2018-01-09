@@ -1,3 +1,4 @@
+require 'pry'
 class Dog
   attr_accessor :name, :breed
   attr_reader :id
@@ -66,7 +67,7 @@ class Dog
     SQL
 
     attributes = DB[:conn].execute(sql, name, breed).first
-
+    binding.pry
     if !attributes.empty?
       self.new_from_db(attributes)
     else
