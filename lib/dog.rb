@@ -66,7 +66,7 @@ class Dog
     AND breed = ?
     SQL
 
-    attributes = DB[:conn].execute(sql, name, breed).first
+    attributes = DB[:conn].execute(sql, name, breed)
 
     if attributes.empty?
       self.create(name: name, breed: breed)
