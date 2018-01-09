@@ -67,11 +67,11 @@ class Dog
     SQL
 
     attributes = DB[:conn].execute(sql, name, breed).first
-    binding.pry
-    if !attributes.empty?
-      self.new_from_db(attributes)
-    else
+
+    if attributes.empty?
       self.create(name: name, breed: breed)
+    else
+      self.new_from_db(attributes)
     end
   end
 
